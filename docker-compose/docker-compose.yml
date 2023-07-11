@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  boilerplate-db:
+    image: mysql:8.0
+    ports:
+      - "13306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root-pass
+      - MYSQL_DATABASE=boilerplate
+      - MYSQL_USER=boilerplate-user
+      - MYSQL_PASSWORD=boilerplate-pass
+      - TZ=UTC
+    command:
+      - --lower_case_table_names=1
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./mysql:/var/lib/mysql
