@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/boilerplate?serverTimezone=UTC&characterEncoding=UTF-8
+    username: boilerplate-user
+    password: boilerplate-pass
+  flyway:
+    user: boilerplate-user
+    password: boilerplate-pass
+    schemas: boilerplate
+    url: jdbc:mysql://localhost:13306/boilerplate?serverTimezone=UTC&characterEncoding=UTF-8
+    enabled: true
